@@ -4,16 +4,15 @@ const atracoesEvento = document.getElementById('atracoes');
 const descricaoEvento = document.getElementById('descricao');
 const dataEvento = document.getElementById('data');
 const lotacaoEvento = document.getElementById('lotacao');
-/* const formularioCadastro = document.getElementById('formulario'); */
+
 
 var raw = {
     "name": nomeEvento.value,
     "attractions": [atracoesEvento.value],
+    "poster": "link da imagem",
     "description": descricaoEvento.value,
     "scheduled": dataEvento.value,
-    "number_tickets": lotacaoEvento.value,
-    
-    
+    "number_tickets": lotacaoEvento.value,      
 };
 
 var requestOptions = {
@@ -22,31 +21,26 @@ var requestOptions = {
     body: JSON.stringify(raw),
     /* redirect: 'follow' */
 };
-
-
 const postarDados = await fetch("https://soundgarden-api.deta.dev/events", requestOptions)
 .then(response => response.text())
 .then(result => console.log(result))
-.catch(error => console.log('error', error));
-
- 
-
-};
+.catch(error => console.log('error', error));};
 
 
-const botaoCadastrar = document.getElementById('btnCadastro');
-botaoCadastrar.onclick = novoEvento;
+/* const botaoCadastrar = document.getElementById('btnCadastro');
+formularioCadastro */
 
 
 
 
+const formularioCadastro = document.getElementById('formulario');
 
-
-/*   botaoCadastrar.addEventListener('submit', function () {
+formularioCadastro.addEventListener('submit', function (event) {
     event.preventDefault();
+    novoEvento();
     console.log(nomeEvento.value, atracoesEvento.value, descricaoEvento.value, dataEvento.value, lotacaoEvento.value);
 });
- */
+
 
 /* formCEP.addEventListener("submit", async (form) => {
     form.preventDefault();
