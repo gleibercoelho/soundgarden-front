@@ -25,29 +25,34 @@ const carregando = (loading = true) => {
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-const raw = {
-    "name": nomeEditarEvento.value,
-    "poster": "link da imagem",
-    "attractions": [atracoesEditarEvento.value],
-    "description": descricaoEditarEvento.value,
-    "scheduled": dataEditarEvento.value,
-    "number_tickets": lotacaoEditarEvento.value,
-}
-
 formEditarEvento.addEventListener('submit', (form) => {
     form.preventDefault();
     carregando();
 
-   
+    const raw = {
+        "name": nomeEditarEvento.value,
+        "poster": "link da imagem",
+        "attractions": [atracoesEditarEvento.value],
+        "description": descricaoEditarEvento.value,
+        "scheduled": dataEditarEvento.value,
+        "number_tickets": lotacaoEditarEvento.value,
+    }
 
-    const response = fetch(endpointEditarEvento + `${id}`, {
-        method: 'PUT',
+    /* const response =  */fetch(endpointEditarEvento + `${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(raw),
         /* redirect: 'follow', */
-        headers: { "Content-Type": "application/json" },
-    }).then((result) => result.json());
-    console.log(response)
-    console.log(nomeEditarEvento.value, atracoesEditarEvento.value, descricaoEditarEvento.value, dataEditarEvento.value, lotacaoEditarEvento.value);
+
+    }).then((response) => {
+        if (response.ok) {
+            alert("Evento atualizado com sucesso!");
+        } else {
+            alert("Falha ao atualizar evento!");
+        }
+    });
+    carregando(false);
+    console.log(submit)
 });
 
 const obterEvento = async () => {
@@ -55,8 +60,7 @@ const obterEvento = async () => {
 
 
     const evento = await fetch(endpointEditarEvento + `${id}`)
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
         .catch(error => console.log('error', error));
 
     carregando(false);
@@ -65,7 +69,7 @@ const obterEvento = async () => {
     bannerEditarEvento.value = evento.poster;
     atracoesEditarEvento.value = evento.attractions;
     descricaoEditarEvento.value = evento.description;
-    dataEditarEvento.value = evento.scheduled/* .split(".")[0] */;
+    dataEditarEvento.value = evento.scheduled.split(".")[0];
     lotacaoEditarEvento.value = evento.number_tickets;
 }
 
