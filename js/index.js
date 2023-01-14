@@ -8,4 +8,14 @@ const getEvents = async () => {
 
 getEvents();
 
+function abrirmodal(carregarmodal){
+    let modal = document.getElementById(carregarmodal);
+     modal.style.display = 'block';
+    }
+    
+    
+    function fechar(fecharmodal){
+    let modalfechar = document.getElementById(fecharmodal);
+     modalfechar.style.display = 'none';
+    }
 

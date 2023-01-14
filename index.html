@@ -33,7 +33,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                        <button id="button"  class="btn btn-primary" onclick="abrirmodal('vis-modal')">reservar ingresso</button>
                 </article>
                 <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
@@ -41,7 +41,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                        <button id="button"  class="btn btn-primary" onclick="abrirmodal('vis-modal')">reservar ingresso</button>
                 </article>
                 <article class="evento card p-5 m-3">
                     <h2>nome do evento - 05/03/2022</h2>
@@ -49,7 +49,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aperiam sunt quo similique,
                         dolorum consectetur inventore ipsam, officiis neque natus eius harum alias quidem. Possimus
                         nobis in inventore tenetur asperiores.</p>
-                    <a href="#" class="btn btn-primary">reservar ingresso</a>
+                        <button id="button"  class="btn btn-primary" onclick="abrirmodal('vis-modal')">reservar ingresso</button>
                 </article>
             </div>
             <div class="container text-center">
@@ -104,6 +104,29 @@
             </nav>
         </div>
     </footer>
+
+    <div id="vis-modal" class="modal">
+        <div class="conteudo-modal" id="vis-modal">
+        <header id="vis-modal">
+            <h1>Fazer Reserva</h1>
+            <span  class="fechar-modal" onclick="fechar('vis-modal')">x</span>
+        </header>
+        <br>
+        <br>
+        <br>
+        <div>
+            <form action="" id="vis-modal">
+                <span>Nome</span>
+                <input type="text" name="Nome" placeholder="Nome Completo">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="Email">
+               
+            </form>
+            <button type="submit">Reservar</button>
+        </div>
+    </div>
+    </div>
+
     <script src="./js/consts.js"></script>
     <script src="./js/index.js"></script>
 </body>
