@@ -2,9 +2,9 @@ const endpointListarEventos = "https://soundgarden-api.deta.dev/events";
 const tabelaListaEventos = document.getElementById('tabelaCorpo');
 const botesAcao = document.getElementById('botoesAcao');
 
-function popularFeriados(feriadosDados){
+function listarEventos(eventosDados){
     tabelaListaEventos.innerHTML = '';
-    feriadosDados.forEach(feriado =>{
+    eventosDados.forEach(eventos =>{
         let th = document.createElement('tr');
         let tdData = document.createElement('td');
         let tdTitulo = document.createElement('td');
@@ -12,12 +12,12 @@ function popularFeriados(feriadosDados){
         let TdAcoes = document.createElement('th');
         let ThPoster = document.createElement('tr');
 
-/*         th.innerText = console.log(feriado.lenght); */
-        th.innerText = feriado._id;
-        tdData.innerText = feriado.scheduled;
-        tdTitulo.innerText = feriado.name;
-        tdAtracoes.innerText= feriado.attractions;
-        TdAcoes.innerText = botesAcao.value.indexof("td");
+/*         th.innerText = console.log(eventos.lenght); */
+        th.innerText = eventos._id;
+        tdData.innerText = eventos.scheduled;
+        tdTitulo.innerText = eventos.name;
+        tdAtracoes.innerText= eventos.attractions;
+        /* TdAcoes.innerText = botesAcao.value.indexof("td"); */
         
 
         tabelaListaEventos.appendChild(th);
@@ -45,7 +45,7 @@ fetch(endpointListarEventos, requestOptions)
     .then(response => response.json())
     .then(function(dados){
         console.log(dados);
-        popularFeriados(dados);
+        listarEventos(dados);
     })
     .catch(error => console.log('error', error));
 
