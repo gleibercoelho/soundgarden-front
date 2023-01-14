@@ -17,7 +17,11 @@ function listarEventos(eventosDados){
         tdData.innerText = eventos.scheduled;
         tdTitulo.innerText = eventos.name;
         tdAtracoes.innerText= eventos.attractions;
-        /* TdAcoes.innerText = botesAcao.value.indexof("td"); */
+        TdAcoes.innerHTML = `<td> 
+        <a href="reservas.html" class="btn btn-dark">ver reservas</a>
+        <a href="editar-evento.html?id=${eventos._id}" class="btn btn-secondary">editar</a>
+        <a href="excluir-evento.html?id=${eventos._id}" class="btn btn-danger">excluir</a>
+    </td>`;
         
 
         tabelaListaEventos.appendChild(th);
