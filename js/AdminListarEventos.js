@@ -14,7 +14,7 @@ function listarEventos(eventosDados){
 
 /*         th.innerText = console.log(eventos.lenght); */
         th.innerText = eventos._id;
-        tdData.innerText = eventos.scheduled;
+        tdData.innerText = eventos.scheduled.split(".")[0];
         tdTitulo.innerText = eventos.name;
         tdAtracoes.innerText= eventos.attractions;
         TdAcoes.innerHTML = `<td> 
