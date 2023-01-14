@@ -17,7 +17,7 @@ const id = params.get("id");
 formExcluirEvento.addEventListener('submit', (form) => {
     form.preventDefault();
 
-    const raw = {
+ /*    const raw = {
         "name": nomeExcluirEvento.value,
         "poster": bannerExcluirEvento.value,
         "attractions": [atracoesExcluirEvento.value],
@@ -26,12 +26,12 @@ formExcluirEvento.addEventListener('submit', (form) => {
         "number_tickets": lotacaoExcluirEvento.value,
     };
   
- 
+  */
 
 var requestOptions = {
     method: 'DELETE',
     redirect: 'follow',
-    body: JSON.stringify(raw),
+    /* body: JSON.stringify(raw), */
     headers: { "Content-Type": "application/json" }
   };
 

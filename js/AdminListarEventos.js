@@ -1,6 +1,7 @@
 const endpointListarEventos = "https://soundgarden-api.deta.dev/events";
 const tabelaListaEventos = document.getElementById('tabelaCorpo');
 const botesAcao = document.getElementById('botoesAcao');
+let contador = 0
 
 function listarEventos(eventosDados){
     tabelaListaEventos.innerHTML = '';
@@ -11,14 +12,16 @@ function listarEventos(eventosDados){
         let tdAtracoes = document.createElement('td');
         let TdAcoes = document.createElement('th');
         let ThPoster = document.createElement('tr');
+        contador = contador+1
+        /* tdData.setAttribute(type="datetime-local",type="datetime-local"); */
 
 /*         th.innerText = console.log(eventos.lenght); */
-        th.innerText = eventos._id;
-        tdData.innerText = eventos.scheduled.split(".")[0];
+        th.innerText = contador;
+        tdData.innerText = `${new Date (eventos.scheduled).toLocaleDateString('pt-BR')}`;
         tdTitulo.innerText = eventos.name;
         tdAtracoes.innerText= eventos.attractions;
         TdAcoes.innerHTML = `<td> 
-        <a href="reservas.html" class="btn btn-dark">ver reservas</a>
+        <a href="reservas.html?id=${eventos._id}"" class="btn btn-dark">ver reservas</a>
         <a href="editar-evento.html?id=${eventos._id}" class="btn btn-secondary">editar</a>
         <a href="excluir-evento.html?id=${eventos._id}" class="btn btn-danger">excluir</a>
     </td>`;
