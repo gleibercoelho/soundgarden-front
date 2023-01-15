@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-   <!--  <link rel="stylesheet" href="css/styleBooking.css"> -->
+    <!--  <link rel="stylesheet" href="css/styleBooking.css"> -->
 </head>
 
 <body>
@@ -78,7 +78,7 @@
 
                 </div>
             </main>
-            
+
         </section>
         <section class="full d-flex justify-content-center align-items-center"
             style="background-color: #f2f2f2; color: #555">
@@ -131,28 +131,27 @@
 
     <div id="vis-modal" class="modal" id="modal">
         <div class="conteudo-modal" id="vis-modal">
-        <header id="vis-modal">
-            <h1>Fazer Reserva    X </h1>
-            <!-- <span  class="fechar-modal" onclick="fechar('vis-modal')" >x</span> -->
-        </header>
-        <br>
-        <br>
-        <br>
-        <div>
-            <form action="" id="vis-modal">
-                <span>Nome</span>
-                <input type="text" name="Nome" id="ownerImput" placeholder="Nome Completo">
-                <span>Email</span>
-                <input type="email" name="email" id="EmailImput" placeholder="Email">
-                <span>ID</span>
-                <input type="name" name="id" id="IdImput" disabled>
+            <header id="vis-modal">
+                <h1>Fazer Reserva</h1>
+                <!-- <span  class="fechar-modal" onclick="fechar('vis-modal')" >x</span> -->
+            </header>
+
+            <div>
+                <form action="" id="formBooking">
+                    <span>Nome</span>
+                    <input type="text" name="Nome" id="ownerImput" placeholder="Nome Completo">
+                    <span>Email</span>
+                    <input type="email" name="email" id="EmailImput" placeholder="Email">
+                    <span>ID</span>
+                    <input type="name" name="id" id="IdImput">
+
+                    <button type="submit" class="btn-primary">Reservar</button>
+                    <button class="btn-primary" onclick="acao()">fechar Janela</button>
+                </form>
 
 
-               
-            </form>
-            <a class="btn-primary" onclick="acao()" type="submit">Reservar</a>
+            </div>
         </div>
-    </div>
     </div>
 
     <script src="./js/consts.js"></script>
