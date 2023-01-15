@@ -49,6 +49,10 @@ footer nav ul li  {
     padding: 10px;
 }
 
+#h5{
+    display: none;
+}
+
 .modal{
     position: fixed;
     display: none;
@@ -111,7 +115,7 @@ footer nav ul li  {
     padding: 10px;
 }
 
-.modal button{
+.modal a{
     display: flex;
     justify-content: center;
     align-items: center;

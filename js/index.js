@@ -1,14 +1,30 @@
+const divEventos = document.getElementById('eventos');
 
 const getEvents = async () => {
-    alert("Página carregada");
-    const events = await fetch('${BASE_URL}/events').then((result) => result.json());
+
+    const events = await fetch(BASE_URL).then((result) => result.json());
     console.log(events);
+
+    events.sort((eventoA,eventoB) => eventoA.scheduled - eventoB.scheduled)
+    .slice(0-3)
+    .forEach((event) => {
+        const article = document.createElement('article');
+        article.innerHTML = `
+            <article class="evento card p-5 m-3">
+                <h2>${event.name} - ${new Date(event.scheduled).toLocaleDateString("pt-BR")}</h2>
+                <h4>${event.attractions.join(", ")}</h4>
+                <p>${event.description}</p>
+                <a href="#" class="btn btn-primary">reservar ingresso</a>
+            </article>`;
+
+        divEventos.appendChild(article);
+    })
 };
 
 
 getEvents();
 
-function abrirmodal(carregarmodal){
+/* function abrirmodal(carregarmodal){
     let modal = document.getElementById(carregarmodal);
      modal.style.display = 'block';
     }
@@ -19,3 +35,4 @@ function abrirmodal(carregarmodal){
      modalfechar.style.display = 'none';
     }
 
+  */

@@ -1,1 +1,1 @@
-const BASE_URL = "https://soundgarden-api.deta.dev";
+const BASE_URL = "https://soundgarden-api.deta.dev/events";
