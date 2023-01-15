@@ -14,7 +14,7 @@ const getEvents = async () => {
         article.innerHTML = `
             <article class="evento card p-5 m-3">
                 <h2>${event.name} - ${new Date(event.scheduled).toLocaleDateString("pt-BR")}</h2>
-                <h5 id="h5">${event._id}</h5>
+                <h5 id="h5"> ID ${event._id}</h5>
                 <h4>${event.attractions.join(", ")}</h4>
                 <p>${event.description}</p>
                 <a href="#" onclick="acao()" class="btn btn-primary">reservar ingresso</a>

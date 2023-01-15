@@ -24,6 +24,7 @@ aside {
 .btn-primary{
     background-color: #C2185B;
     border-color: #C2185B;
+    margin-top: 15px;
 }
 
 main.login {
@@ -51,8 +52,8 @@ footer nav ul li  {
 
 /* #h5{
     display: none;
-} */
-
+}
+ */
 .modal{
     position: fixed;
     display: none;
@@ -65,9 +66,10 @@ footer nav ul li  {
 
 .modal .conteudo-modal{
     position: fixed;
-    width: 30vw;
+    max-width: 30vw;
+    height: 550px;
     left: 35vw;
-    top: 10vw;   
+       
     background-color: #fff;
     /* border: 1px solid #c4c4c4; */
     box-shadow: 4px 4px 8px #0002;
@@ -78,6 +80,7 @@ footer nav ul li  {
 
 .modal header{
     background-color: #c21858;
+    height: 70px;
     padding: 20px;
     box-shadow: 4px 4px 8px #0002;
     justify-content: space-between;
@@ -85,7 +88,7 @@ footer nav ul li  {
     /* border-radius: 7px; */
 }
 .modal header h1{
-    font-size: 45px;
+    font-size: 30px;
     font-weight: bold;
     color: #fff;
 
@@ -102,6 +105,7 @@ footer nav ul li  {
     flex-direction: column;
     border-radius: 20px;
     padding: 0px 25px 50px 25px;
+    height: 600px;
 }
 
 .modal span{
@@ -132,3 +136,4 @@ footer nav ul li  {
     font-size: 20px;
     cursor: pointer;
 }
+
