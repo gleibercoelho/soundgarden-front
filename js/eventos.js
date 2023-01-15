@@ -61,7 +61,7 @@ const novoEvento = async () => {
         /* redirect: 'follow', */
         
     };
-    const postarDados = await fetch("https://soundgarden-api.deta.dev/bookings", requestOptions)
+    await fetch("https://soundgarden-api.deta.dev/bookings", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));};
