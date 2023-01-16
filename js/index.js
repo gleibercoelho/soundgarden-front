@@ -10,7 +10,7 @@ const getEvents = async () => {
     .forEach((event) => {
         const article = document.createElement('article');
         article.innerHTML = `
-            <article class="evento card p-5 m-3">
+            <article class="evento card p-5 m-3" id="card">
                 <h2>${event.name} - ${new Date(event.scheduled).toLocaleDateString("pt-BR")}</h2>
                 <h5 id="h5">ID ${event._id}</h5>
                 <h4>${event.attractions.join(", ")}</h4>

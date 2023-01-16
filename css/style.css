@@ -137,3 +137,54 @@ footer nav ul li  {
     cursor: pointer;
 }
 
+
+.carousel img{
+    background: no-repeat center;
+    background-size: cover; 
+    max-height: 400px;
+    object-fit: cover;
+}
+#header {
+    background-color: rgb(26, 26, 26);
+}
+#main {
+    background-color: rgb(26, 26, 26);
+}
+
+#full{
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+}
+
+#h2 {
+   color: #c21858;
+   font-weight: 600;
+   text: 70px;
+}
+
+#artigo {
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+}
+
+.col{
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+}
+
+#card {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;    
+}
+
+#card a{
+    position: absolute;    
+    bottom: 35px;
+    left: 30%;
+}
+
+#footer {
+    background-color: red; important:  !important;
+}
