@@ -69,5 +69,5 @@ const formBooking = document.getElementById('formBooking');
 formBooking.addEventListener('submit', function (event) {
     event.preventDefault();
     novoEvento();
-    console.log(ownerBooking.value, EmailBooking.value, IdReserva.value);
+    console.log(ownerBooking.value, EmailBooking.value, IdBooking.value);
 });
