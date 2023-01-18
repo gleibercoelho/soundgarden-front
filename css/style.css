@@ -151,19 +151,19 @@ footer nav ul li {
 }
 
 #header {
-    background-image: url(/img/5053309.jpg);
+    background-image: url(../img//img/5053309.jpg);
     background-size: contain;
     /* <a href="http://www.freepik.com">Designed by coolvector / Freepik</a>  */
 }
 
 #main {
-    background-image: url(/img/5053309.jpg);
+    background-image: url(.../img/5053309.jpg);
     background-size: contain;
     /* <a href="http://www.freepik.com">Designed by coolvector / Freepik</a>  */
 }
 
 #full {
-    background-image: url(/img/5053309.jpg);
+    background-image: url(./img/5053309.jpg);
     background-size: contain;
     /* <a href="http://www.freepik.com">Designed by coolvector / Freepik</a>  */
 }
