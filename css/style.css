@@ -218,7 +218,8 @@ footer nav ul li {
 }
 
 #botaovoltar {
-    float: right;
+    float: left;
+    width: 70px;
 }
 
 #linkvoltar {
