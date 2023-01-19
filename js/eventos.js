@@ -112,7 +112,7 @@ const novoEvento = async () => {
     };
     await fetch("https://soundgarden-api.deta.dev/bookings", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(() => alert("reserva feita com sucesso"))
         .catch(error => console.log('error', error));
 };
 

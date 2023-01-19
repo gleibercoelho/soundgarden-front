@@ -23,7 +23,7 @@ var requestOptions = {
 };
 const postarDados = await fetch("https://soundgarden-api.deta.dev/events", requestOptions)
 .then(response => response.text())
-.then(result => console.log(result))
+.then(() => alert("Evento criado com sucesso"))
 .catch(error => console.log('error', error));};
 
 

@@ -39,7 +39,7 @@ var requestOptions = {
   
   fetch(endpointExcluir + `${id}`, requestOptions)
     .then(response => response.text())
-    .then(result => console.log(result))  
+    .then(() => alert("Evento excluído com sucesso ")) 
     .catch(error => console.log('error', error));
     
 });

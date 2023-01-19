@@ -70,9 +70,9 @@ footer nav ul li {
 .modal .modalbody {
     position: fixed;
     max-width: 30vw;
-    height: 450px;
+    height: 430px;
     left: 35vw;
-
+    margin-top: 70px;
     background-color: #fff;
     /* border: 1px solid #c4c4c4; */
     box-shadow: 4px 4px 8px #0002;
