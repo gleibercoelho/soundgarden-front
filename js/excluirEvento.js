@@ -38,8 +38,12 @@ var requestOptions = {
 
   
   fetch(endpointExcluir + `${id}`, requestOptions)
-    .then(response => response.text())
-    .then(() => alert("Evento excluído com sucesso ")) 
+  .then((response) => {
+    if (response.ok) {
+        snackBar();
+    }
+})
+    .then(result => console.log(result))
     .catch(error => console.log('error', error));
     
 });
@@ -60,5 +64,24 @@ const obterEvento = async () => {
     dataExcluirEvento.value = evento.scheduled.split(".")[0];
     lotacaoExcluirEvento.value = evento.number_tickets;
 }
+
+const snackbar = document.querySelector('.snackbarAdm');
+const close = document.querySelector('.close');
+const progress = document.querySelector('.progress');
+
+function snackBar() {
+    snackbar.classList.add('active');
+    progress.classList.add('active');
+    setTimeout(() => {
+        snackbar.classList.remove('active');
+        progress.classList.remove('active');
+    }, 3500);
+}
+
+close.addEventListener('click', function () {
+    snackbar.classList.remove('active');
+    progress.classList.remove('active');
+
+});
 
 obterEvento();

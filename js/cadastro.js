@@ -1,45 +1,68 @@
 const novoEvento = async () => {
-const nomeEvento = document.getElementById('nome');
-const atracoesEvento = document.getElementById('atracoes');
-const descricaoEvento = document.getElementById('descricao');
-const dataEvento = document.getElementById('data');
-const lotacaoEvento = document.getElementById('lotacao');
+  const nomeEvento = document.getElementById('nome');
+  const atracoesEvento = document.getElementById('atracoes');
+  const descricaoEvento = document.getElementById('descricao');
+  const dataEvento = document.getElementById('data');
+  const lotacaoEvento = document.getElementById('lotacao');
 
 
-var raw = {
+  var raw = {
     "name": nomeEvento.value,
     "attractions": [atracoesEvento.value],
     "poster": "link da imagem",
     "description": descricaoEvento.value,
     "scheduled": dataEvento.value,
-    "number_tickets": lotacaoEvento.value,      
-};
+    "number_tickets": lotacaoEvento.value,
+  };
 
-var requestOptions = {
+  var requestOptions = {
     method: 'POST',
-    headers: {"Content-Type": "application/json"},
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(raw),
     /* redirect: 'follow' */
-};
-const postarDados = await fetch("https://soundgarden-api.deta.dev/events", requestOptions)
-.then(response => response.text())
-.then(() => alert("Evento criado com sucesso"))
-.catch(error => console.log('error', error));};
+  };
+  const postarDados = await fetch("https://soundgarden-api.deta.dev/events", requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        snackBar();
+      }
+    })
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+  };
+
+  /* const botaoCadastrar = document.getElementById('btnCadastro');
+  formularioCadastro */
 
 
-/* const botaoCadastrar = document.getElementById('btnCadastro');
-formularioCadastro */
 
 
+  const formularioCadastro = document.getElementById('formulario');
 
-
-const formularioCadastro = document.getElementById('formulario');
-
-formularioCadastro.addEventListener('submit', function (event) {
+  formularioCadastro.addEventListener('submit', function (event) {
     event.preventDefault();
     novoEvento();
     console.log(nomeEvento.value, atracoesEvento.value, descricaoEvento.value, dataEvento.value, lotacaoEvento.value);
-});
+  });
+
+  const snackbar = document.querySelector('.snackbarAdm');
+  const close = document.querySelector('.close');
+  const progress = document.querySelector('.progress');
+
+  function snackBar() {
+    snackbar.classList.add('active');
+    progress.classList.add('active');
+    setTimeout(() => {
+      snackbar.classList.remove('active');
+      progress.classList.remove('active');
+    }, 3500);
+  }
+
+  close.addEventListener('click', function () {
+    snackbar.classList.remove('active');
+    progress.classList.remove('active');
+
+  });
 
 
 /* formCEP.addEventListener("submit", async (form) => {
@@ -75,4 +98,4 @@ formularioCadastro.addEventListener('submit', function (event) {
   "created_at": "2022-03-26T02:46:21.918Z",
   "updated_at": "2022-03-26T02:46:21.918Z",
   "__v": 0
-} */
+}*/

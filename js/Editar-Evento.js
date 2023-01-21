@@ -46,13 +46,14 @@ formEditarEvento.addEventListener('submit', (form) => {
 
     }).then((response) => {
         if (response.ok) {
-            alert("Evento atualizado com sucesso!");
-        } else {
-            alert("Falha ao atualizar evento!");
+            snackBar();
         }
-    });
+    })
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
     carregando(false);
-    console.log(submit)
+    /* console.log(submit) */
 });
 
 const obterEvento = async () => {
@@ -73,7 +74,28 @@ const obterEvento = async () => {
     lotacaoEditarEvento.value = evento.number_tickets;
 }
 
+const snackbar = document.querySelector('.snackbarAdm');
+const close = document.querySelector('.close');
+const progress = document.querySelector('.progress');
+
+function snackBar() {
+    snackbar.classList.add('active');
+    progress.classList.add('active');
+    setTimeout(() => {
+        snackbar.classList.remove('active');
+        progress.classList.remove('active');
+    }, 3500);
+}
+
+close.addEventListener('click', function () {
+    snackbar.classList.remove('active');
+    progress.classList.remove('active');
+
+});
+
 obterEvento();
+
+
 
 /* {
     "name": "Evento teste 2",

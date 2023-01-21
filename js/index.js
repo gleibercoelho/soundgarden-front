@@ -114,10 +114,13 @@ const novoEvento = async () => {
 
     };
     await fetch("https://soundgarden-api.deta.dev/bookings", requestOptions)
-        .then(response => response.text())
-        .then(() => alert("reserva feita com sucesso"))
-        .catch(error => console.log('error', error));
-
+    .then((response) => {
+        if (response.ok) {
+            snackBar();} 
+    })
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+   
 
 };
 
@@ -127,4 +130,23 @@ formBooking.addEventListener('submit', function (event) {
     event.preventDefault();
     novoEvento();
     console.log(ownerBooking.value, EmailBooking.value, IdBooking.value);
+});
+
+const snackbar = document.querySelector('.snackbar');
+const close = document.querySelector('.close');
+const progress = document.querySelector('.progress');
+
+function snackBar(){
+    snackbar.classList.add('active');
+    progress.classList.add('active');
+    setTimeout(() =>{
+        snackbar.classList.remove('active');
+        progress.classList.remove('active');
+    }, 3500);
+}
+
+close.addEventListener('click', function(){
+    snackbar.classList.remove('active');
+    progress.classList.remove('active');
+    
 });
